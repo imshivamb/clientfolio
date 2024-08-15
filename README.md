@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Clientfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Clientfolio is a React-based customer management application that displays customer information along with a dynamic photo gallery for each customer.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display a list of customers
+- View detailed information for each customer
+- Dynamic photo gallery for each customer, powered by Unsplash API
+- Responsive design using Tailwind CSS
+- Efficient rendering of large customer lists
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Vite (for build tooling)
+- Unsplash API
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/customer-vue.git
+   cd customer-vue
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+   or if you're using yarn:
+   ```
+   yarn
+   ```
+
+3. Create a `.env` file in the root directory and add your Unsplash API key:
+   ```
+   VITE_UNSPLASH_ACCESS_KEY=your_unsplash_api_key_here
+   ```
+
+4. Start the development server:
+   ```
+   npm run dev
+   ```
+   or with yarn:
+   ```
+   yarn dev
+   ```
+
+5. Open `http://localhost:3000` in your browser to view the app.
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── CustomerList.tsx
+│   ├── CustomerCard.tsx
+│   ├── CustomerDetails.tsx
+│   └── PhotoGrid.tsx
+├── hooks/
+│   ├── useCustomers.ts
+│   └── usePhotoFetcher.ts
+├── types/
+│   └── index.ts
+├── App.tsx
+└── main.tsx
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
