@@ -56,7 +56,7 @@ Clientfolio is a React-based customer management application that displays custo
    yarn dev
    ```
 
-5. Open `http://localhost:3000` in your browser to view the app.
+5. Open `http://localhost:5173` in your browser to view the app.
 
 ## Project Structure
 
